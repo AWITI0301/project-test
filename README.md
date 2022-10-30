@@ -1,28 +1,26 @@
 # README
 
-This is a simple dummy app for testing authentication using sessions and cookies for a school management system. Parents, students and teachers should have different accounts and views once they log in.
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-## SETUP
+Things you may want to cover:
 
-* The project consists of a rails backend and a ***vite-react*** front-end
+* Ruby 
 
-* Clone the repository and run the following commands in order to get the development mode live and running
+* System dependencies
 
-        bundle install
-        rails db:migrate db:seed
-        npm install --prefix client
-        rails s
-        npm run dev --prefix client
+* Configuration
 
-## Default usernames and passwords
+* Database creation
 
-* the seed file contains some usernames and passwords for the different users, so once you seed you should be able to log in with those same credentials from the seed file.
+* Database initialization
 
-## A few gotchas
+* How to run the test suite
 
-* Adding a proxy on the package.json file will not work for *vite-react* applications, unlike those react apps created with *create-react-app* command. Proxy configurations will have to be done on the **vite.config.js** file (*yet to figure out a shorter way of handling proxies with vite*)
+* Services (job queues, cache servers, search engines, etc.)
 
-* This method of authentication implementation does not necessarily need a separate users table. However, for the different users (i.e teachers, students, parents and admin), their tables must have a role column to differentiate their roles and a password_digest column for password authentication.
+* Deployment instructions
 
+* ...
 
-
+* branch testing

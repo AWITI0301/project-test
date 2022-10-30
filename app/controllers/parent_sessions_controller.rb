@@ -2,6 +2,7 @@ class ParentSessionsController < ApplicationController
 
     def create
         parent = Parent.find_by(username: params[:username])
+        
         if parent&.authenticate(params[:password])
             session[:parent_id] = parent.id
             render json: parent

@@ -10,39 +10,114 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_20_011407) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_30_023111) do
   create_table "admins", force: :cascade do |t|
-    t.string "username"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "email"
-    t.string "role"
+    t.string "full_name"
     t.string "password_digest"
+    t.string "user_name"
+    t.string "role"
+    t.string "username"
+  end
+
+  create_table "assessments", force: :cascade do |t|
+    t.string "name"
+    t.integer "subject_id"
+    t.integer "total"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "assignments", force: :cascade do |t|
+    t.string "name"
+    t.integer "subject_id"
+    t.string "due_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "classrooms", force: :cascade do |t|
+    t.string "name"
+    t.integer "teacher_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "parents", force: :cascade do |t|
-    t.string "username"
-    t.string "email"
     t.string "role"
+    t.string "address"
+    t.string "phone_no"
+    t.string "full_name"
+    t.string "email"
     t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "username"
+  end
+
+  create_table "student_assesments", force: :cascade do |t|
+    t.integer "assessment_id"
+    t.integer "student_id"
+    t.integer "score"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "student_assignments", force: :cascade do |t|
+    t.integer "student_id"
+    t.integer "assignment_id"
+    t.integer "score"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "students", force: :cascade do |t|
-    t.string "username"
-    t.string "email"
     t.string "role"
+    t.string "gender"
+    t.string "image"
+    t.integer "parent_id"
+    t.string "phone_no"
+    t.integer "admission_no"
+    t.integer "subject_id"
+    t.string "full_name"
+    t.string "email"
     t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "classroom_id"
+    t.string "username"
+  end
+
+  create_table "subject_teachers", force: :cascade do |t|
+    t.integer "teacher_id"
+    t.integer "subject_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "subjects", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "teachers", force: :cascade do |t|
-    t.string "username"
-    t.string "email"
     t.string "role"
+    t.string "gender"
+    t.string "image"
+    t.string "phone_no"
+    t.string "address"
+    t.string "full_name"
+    t.string "email"
     t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "username"
+  end
+
+  create_table "users", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
