@@ -25,7 +25,28 @@ if (subjects.length === 0)
 
   return (
     <>
-      <div>This will be the Teacher's view after Logging in</div>
+       <h1 className="text-center p-3 text-black text-xl font-bold">
+    SUBJECT NAME
+  </h1>
+
+  <div className="overflow-x-auto relative dark">
+    <table className="">
+      <thead className="">
+        <tc>
+          <th scope="col" className="py-3 px-6">
+            ASSIGNMENT
+          </th>
+          <th scope="col" className="py-3 px-6">
+            ASSESSMENT
+          </th>
+          <th scope="col" className="py-3 px-6">
+            CLASSROOMS
+          </th>
+        
+        </tc>
+      </thead>
+      </table>
+  </div>  
 
     </>
   );
